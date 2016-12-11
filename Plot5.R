@@ -9,7 +9,7 @@ SCC1<-SCC[grepl("Motor Vehicles", SCC$Short.Name),]
 mdata<- merge(NEI, SCC1, by = "SCC")
 
 
-Balt <- subset(NEI, fips == "24510" & type == "ON-ROAD")
+Balt <- subset(mdata, fips == "24510" & type == "ON-ROAD")
 BaltPM <- aggregate(Balt[c("Emissions")], list(year = Balt$year,type = Balt$type), sum)
 
 
